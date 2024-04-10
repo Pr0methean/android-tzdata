@@ -155,7 +155,7 @@ mod test {
     #[test]
     fn parse() {
         let mut archive = File::open("tests/resources/tzdata.zip").unwrap();
-        let mut zip = zip::ZipArchive::new(&mut archive).unwrap();
+        let mut zip = zip_next::ZipArchive::new(&mut archive).unwrap();
         let mut file = zip.by_index(0).unwrap();
         let mut data = Vec::new();
         file.read_to_end(&mut data).unwrap();
